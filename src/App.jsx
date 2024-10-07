@@ -1,18 +1,12 @@
-function App() { 
-  return (
-	  <>
-	    <h1 className="text-3x1 font-bold">
-	      Font Body
-	    </h1>
-      <h1 className="text-3x1 font-poppins">
-	      Font Poppins
-	    </h1>
-      <h1 className="text 3x1">
-	      Font Body
-	    </h1>
-      <p>Ini font body juga</p>
-	  </>
-  )
-}
+import SignInPage from "./pages/SignIn";
+import SignUpPage from "./pages/SignUp";
 
-export default App
+const App = () => {
+  return (
+    <div className="flex justify-center min-h-screen items-center">
+      <SignUpPage />
+    </div>
+  );
+};
+
+export default App;
