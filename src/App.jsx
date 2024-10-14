@@ -12,7 +12,8 @@ const App = () => {
       <div className="w-full max-w-sm">
         {/* logo start */}
         <div className="flex justify-center font-poppins tracking-wide text-primary text-4xl">
-          <span className="font-bold ">FINE</span>bank
+          <span className="font-bold ">FINE</span>
+          <span className="font-poppins ">bank</span>
           <span className="font-bold">.IO</span>
         </div>
         {/* logo end */}
@@ -20,7 +21,7 @@ const App = () => {
         <div className="mt-16">
           <form action="">
             <div className="mb-6">
-              <label htmlFor="email" className="block text-sm mb-2">
+              <label htmlFor="email" className="font-poppins block text-sm mb-2">
                 Email Address
               </label>
               <input
@@ -32,7 +33,7 @@ const App = () => {
               />
             </div>
             <div className="mb-6">
-              <label htmlFor="password" className="block text-sm mb-2">
+              <label htmlFor="password" className="font-poppins block text-sm mb-2">
                 Password
               </label>
               <input
@@ -55,7 +56,7 @@ const App = () => {
               </label>
             </div>
             <button
-              className="h-12 rounded-md text-sm bg-primary w-full text-white"
+              className="h-12 rounded-md text-sm bg-primary w-full text-white font-poppins"
               type="submit"
             >
               Login
