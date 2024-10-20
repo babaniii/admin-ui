@@ -9,7 +9,7 @@ const AuthLayout = (props) => {
       {/* container start */}
       <div className="w-full max-w-sm">
         {/* logo start */}
-        <Logo/>
+        <Logo />
         {/* logo end */}
         {/* form start */}
         <div className="mt-16">{children}</div>
@@ -17,7 +17,10 @@ const AuthLayout = (props) => {
         {/* teks start */}
         <div className="my-9 px-7 flex justify-center text-xs text-gray-03 items-center flex-col static">
           <div className="border border-gray-05 w-full"></div>
-          <div className="px-2 bg-special-mainBg absolute"> or sign in with</div>
+          <div className="px-2 bg-special-mainBg absolute">
+            {" "}
+            or sign in with
+          </div>
         </div>
         {/* teks end */}
         {/* sign in with google start */}
@@ -87,44 +90,30 @@ const AuthLayout = (props) => {
         </div>
         {/* sign in with google end */}
         {/* link start */}
-<div className="flex justify-center">
-  {type == "sign up" ? (
-    <>
-      <span className="text-sm text-gray-03">
-        Already have an account?&nbsp;
-      </span>
-      <a className="text-primary text-sm font-bold">Sign In Here</a>
-    </>
-  ) : (
-    <a className="text-primary text-sm font-bold">Create an account</a>
-  )}
-</div>
-{/* link end */}
+        <div className="flex justify-center">
+          {type == "sign up" ? (
+            <>
+              <span className="text-sm text-gray-03">
+                Already have an account?&nbsp;
+              </span>
+              <a className="text-primary text-sm font-bold">Sign In Here</a>
+            </>
+          ) : (
+            <a className="text-primary text-sm font-bold">Create an account</a>
+          )}
+        </div>
+        {/* link end */}
+        {/* forgot password start */}
+        <div className="flex justify-center mt-4">
+          <div className="text-sm text-gray-500 font-bold">
+            Forgot Password?
+          </div>
+        </div>
+        {/* forgot password end */}
       </div>
       {/* container end */}
     </div>
   );
 };
 
-/*export default AuthLayout
-//import Button from "../Elements/Button";
-//import Logo from "../Elements/Logo";
-
-const Authlayout = (props) => {
-  const { children, title } = props;
-
-  return (
-    <div className="w-full max-w-xs">
-      <Logo />
-      {children}
-      <div className="py-7 flex justify-center text-xs text-gray-03">
-        <span class="bg-white px-5"> or {title} with</span>
-      </div>
-      <Button variant="bg-gray-05 w-full text-gray-01">
-        <span className="text-dec">Continue with Google</span>
-      </Button>
-    </div>
-  );
-};
-*/
 export default AuthLayout;

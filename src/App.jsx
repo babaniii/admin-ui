@@ -3,8 +3,8 @@ import SignUpPage from "./pages/SignUp";
 
 const App = () => {
   return (
-    <>    <SignInPage/>
-    <SignUpPage/>
+    <>
+      <SignInPage />
     </>
   );
 };
