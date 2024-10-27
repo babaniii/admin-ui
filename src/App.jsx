@@ -2,12 +2,13 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import SignInPage from "./pages/SignIn";
 import SignUpPage from "./pages/SignUp";
 import ErrorRoutes from "./pages/errorRoutes";
+import ForgotPasswordPage from "./pages/ForgotPassword";
 
 const App = () => {
   const myRouter = createBrowserRouter([
     {
       path: "/",
-      element: <div>Halaman Utama</div>,
+      element: <SignInPage />,
       errorElement: <ErrorRoutes />,
     },
     {
@@ -17,6 +18,10 @@ const App = () => {
     {
       path: "/register",
       element: <SignUpPage />,
+    },
+    {
+      path: "/forgotpw",
+      element: <ForgotPasswordPage />,
     },
   ]);
 
