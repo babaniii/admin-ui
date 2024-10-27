@@ -1,8 +1,11 @@
-const Logo = () => {
+const Logo = (props) => {
+  const { variant = "text-primary text-4xl" } = props;
+
   return (
-    <div className="flex justify-center font-poppins tracking-wide text-primary text-4xl mt-6">
-      <span className="font-bold ">FINE</span>
-      bank
+    <div
+      className={`flex justify-center font-poppins tracking-wide ${variant}`}
+    >
+      <span className="font-bold ">FINE</span>bank
       <span className="font-bold">.IO</span>
     </div>
   );
