@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 const AuthLayout = (props) => {
   const { children } = props;
   const { type } = props;
+  const {showForgotPassword = true, showSignInWith = true, showSignInWithGoogle = true, showAccountLink = true } = props;
 
   return (
     <div className="flex justify-center min-h-screen items-center bg-special-mainBg">
@@ -16,15 +17,17 @@ const AuthLayout = (props) => {
         <div className="mt-16">{children}</div>
         {/* form end */}
         {/* teks start */}
+        {showSignInWith && (
         <div className="my-9 px-7 flex justify-center text-xs text-gray-03 items-center flex-col static">
           <div className="border border-gray-05 w-full"></div>
           <div className="px-2 bg-special-mainBg absolute">
-            {" "}
             or sign in with
           </div>
         </div>
+        )}
         {/* teks end */}
         {/* sign in with google start */}
+        {showSignInWithGoogle && (
         <div className="mb-8">
           <button
             className="h-12 flex items-center justify-center rounded-md text-sm w-full bg-gray-05 text-gray-01"
@@ -89,8 +92,10 @@ const AuthLayout = (props) => {
             <span>Continue with Google</span>
           </button>
         </div>
+        )}
         {/* sign in with google end */}
         {/* link start */}
+        {showAccountLink && (
         <div className="flex justify-center">
           {type == "sign up" ? (
             <>
@@ -107,13 +112,16 @@ const AuthLayout = (props) => {
             </Link>
           )}
         </div>
+        )}
         {/* link end */}
         {/* forgot password start */}
+        {showForgotPassword && (
         <div className="flex justify-center mt-4 mb-12">
           <Link to="/forgotpw" className="text-sm text-gray-500 font-bold">
             Forgot Password?
           </Link>
         </div>
+        )}
         {/* forgot password end */}
       </div>
       {/* container end */}

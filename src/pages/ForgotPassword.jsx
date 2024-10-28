@@ -3,7 +3,10 @@ import FormForgotPw from "../components/Fragments/FormForgotPw";
 
 const ForgotPasswordPage = () => {
   return (
-    <Authlayout type="forgot-password">
+    <Authlayout type="forgot-password" showForgotPassword={false} 
+    showSignInWith={false} 
+    showSignInWithGoogle={false} 
+    showAccountLink={false}>
       <FormForgotPw />
     </Authlayout>
   );
