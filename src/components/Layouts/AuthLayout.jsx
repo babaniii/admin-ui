@@ -109,7 +109,7 @@ const AuthLayout = (props) => {
         </div>
         {/* link end */}
         {/* forgot password start */}
-        <div className="flex justify-center mt-4 mb-6">
+        <div className="flex justify-center mt-4 mb-12">
           <Link to="/forgotpw" className="text-sm text-gray-500 font-bold">
             Forgot Password?
           </Link>
