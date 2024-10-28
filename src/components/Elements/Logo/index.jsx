@@ -3,7 +3,7 @@ const Logo = (props) => {
 
   return (
     <div
-      className={`flex justify-center font-poppins tracking-wide mt-6 ${variant}`}
+      className={`flex justify-center font-poppins tracking-wide mt-4 ${variant}`}
     >
       <span className="font-bold ">FINE</span>bank
       <span className="font-bold">.IO</span>
