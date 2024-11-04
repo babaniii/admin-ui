@@ -5,6 +5,7 @@ import ErrorRoutes from "./pages/errorRoutes";
 import ForgotPasswordPage from "./pages/ForgotPassword";
 import DashboardPage from "./pages/dashboard";
 import BalancePage from "./pages/balance";
+import ExpencessPage from "./pages/expanses";
 
 const App = () => {
   const myRouter = createBrowserRouter([
@@ -28,6 +29,10 @@ const App = () => {
     {
       path: "/balance",
       element: <BalancePage />,
+    },
+    {
+      path: "/expencess",
+      element: <ExpencessPage />,
     },
   ]);
 
