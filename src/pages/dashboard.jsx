@@ -4,6 +4,7 @@ import bills from "../data/bills";
 import expensesBreakdowns from "../data/expense";
 import { Icon } from "../components/Icon";
 import transactions from "../data/transaction";
+import CardBalance from "../components/Fragments/Dashboard/CardBalance";
 
 const DashboardPage = () => {
   const billCard = bills.map((bill) => (
@@ -80,7 +81,7 @@ const DashboardPage = () => {
     <MainLayout type="dashboard">
       {/* top content start*/}
       <div className="md:grid md:grid-cols-3 md:gap-x-6">
-        <Card title="Total Balance" />
+        <CardBalance />
         <Card
           title="Goals"
           desc="Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam dolore sapiente suscipit nam, vel officia ipsam praesentium earum unde provident nisi corrupti sit? Officia minima maxime magni quaerat id exercitationem."
