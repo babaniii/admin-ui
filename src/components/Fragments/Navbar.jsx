@@ -49,7 +49,7 @@ const Navbar = () => {
   ];
 
   return (
-    <nav className="bg-defaultBlack text-special-bg2 sm:w-72 w-28 h-screen px-7 py-12 flex flex-col justify-between overflow-y-auto">
+    <nav className="bg-defaultBlack sticky top-0 text-special-bg2 sm:w-72 w-28 min-h-screen px-7 py-12 flex flex-col justify-between">
       <div>
         <div className="flex justify-center mb-10">
           <Logo variant="text-white text-2x1" />

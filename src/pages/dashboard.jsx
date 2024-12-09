@@ -5,6 +5,7 @@ import expensesBreakdowns from "../data/expense";
 import { Icon } from "../components/Icon";
 import transactions from "../data/transaction";
 import CardBalance from "../components/Fragments/Dashboard/CardBalance";
+import CardStatistic from "../components/Fragments/Dashboard/CardStatistic";
 
 const DashboardPage = () => {
   const billCard = bills.map((bill) => (
@@ -91,16 +92,20 @@ const DashboardPage = () => {
           variant="md:col-span-1 md:row-span-2"
           title="Recent Transaction"
           desc=<div>
-          <div>
-          <button>All</button>
-          <button>Revenue</button>
-          <button>Expenses</button>
-          </div>
-          {transactionCard}
+            <div>
+              <button>All</button>
+              <button>Revenue</button>
+              <button>Expenses</button>
+            </div>
+            {transactionCard}
           </div>
         />
-        <Card variant="md:col-span-2" title="Statistics" />
-        <Card variant="md:col-span-2" title="Expenses Breakdown" desc=<div className="lg:grid lg:grid-cols-3">{expenseCard}</div> />
+        <CardStatistic />
+        <Card
+          variant="md:col-span-2"
+          title="Expenses Breakdown"
+          desc=<div className="lg:grid lg:grid-cols-3">{expenseCard}</div>
+        />
       </div>
       {/* bottom content end*/}
     </MainLayout>
