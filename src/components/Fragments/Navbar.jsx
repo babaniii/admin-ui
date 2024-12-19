@@ -61,58 +61,58 @@ const Navbar = () => {
 
   return (
     <div className={`bg-defaultBlack ${theme.name}`}>
-    <nav className="sticky top-0 text-special-bg2 sm:w-72 w-28 min-h-screen px-7 py-12 flex flex-col justify-between">
-      <div>
-        <div className="flex justify-center mb-10">
-          <Logo variant="text-primary text-2x1" />
+      <nav className="sticky top-0 text-special-bg2 sm:w-72 w-28 min-h-screen px-7 py-12 flex flex-col justify-between">
+        <div>
+          <div className="flex justify-center mb-10">
+            <Logo variant="text-primary text-2x1" />
+          </div>
+          {menus.map((menu) => (
+            <Link to={menu.link} key={menu.id}>
+              <div className="flex items-center hover:bg-[var(--color-primary)] hover:text-white px-4 py-3 rounded-md transition duration-200 ease-in-out">
+                <div className="mx-auto sm:mx-0">{menu.icon}</div>
+                <div className="ms-3 hidden sm:block">{menu.label}</div>
+              </div>
+            </Link>
+          ))}
         </div>
-        {menus.map((menu) => (
-          <Link to={menu.link} key={menu.id}>
-            <div className="flex items-center hover:bg-special-bg3 hover:text-white px-4 py-3 rounded-md">
-              <div className="mx-auto sm:mx-0">{menu.icon}</div>
-              <div className="ms-3 hidden sm:block">{menu.label}</div>
+        <div className="md:flex md:gap-2">
+          Themes
+          {themes.map((t) => (
+            <div
+              key={t.name}
+              className={`${t.bgcolor} md:w-6 h-6 rounded-md cursor-pointer mb-2`}
+              onClick={() => setTheme(t)}
+            ></div>
+          ))}
+        </div>
+        <div className="mx-auto w-full">
+          <Link to="/logout">
+            <div className="flex bg-special-bg3 px-4 py-3 rounded-md hover:text-white">
+              <div className="mx-auto sm:mx-0">
+                <Icon.Logout />
+              </div>
+              <div className="ms-3 hidden sm:block">Logout</div>
             </div>
           </Link>
-        ))}
-      </div>
-      <div className="md:flex md:gap-2">
-  Themes
-  {themes.map((t) => (
-    <div
-      key={t.name}
-      className={`${t.bgcolor} md:w-6 h-6 rounded-md cursor-pointer mb-2`}
-      onClick={() => setTheme(t)}
-    ></div>
-  ))}
-</div>
-      <div className="mx-auto w-full">
-        <Link to="/logout">
-          <div className="flex bg-special-bg3 px-4 py-3 rounded-md hover:text-white">
-            <div className="mx-auto sm:mx-0">
-              <Icon.Logout />
+          <div className="border-b my-10 border-b-special-bg"></div>
+          <div className="flex items-center space-x-3">
+            <div>
+              <img
+                src="images/profile.png"
+                alt="Profile"
+                className="w-12 h-12 rounded-full"
+              />
             </div>
-            <div className="ms-3 hidden sm:block">Logout</div>
-          </div>
-        </Link>
-        <div className="border-b my-10 border-b-special-bg"></div>
-        <div className="flex items-center space-x-3">
-          <div>
-            <img
-              src="images/profile.png"
-              alt="Profile"
-              className="w-12 h-12 rounded-full"
-            />
-          </div>
-          <div className="hidden sm:block">
-            <div className="text-white font-bold">Username</div>
-            <div className="text-xs">View Profile</div>
-          </div>
-          <div className="hidden sm:block self-center justify-self-end">
-            <Icon.Kebab />
+            <div className="hidden sm:block">
+              <div className="text-white font-bold">Username</div>
+              <div className="text-xs">View Profile</div>
+            </div>
+            <div className="hidden sm:block self-center justify-self-end">
+              <Icon.Kebab />
+            </div>
           </div>
         </div>
-      </div>
-    </nav>
+      </nav>
     </div>
   );
 };
