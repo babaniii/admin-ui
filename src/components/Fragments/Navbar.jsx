@@ -1,7 +1,8 @@
 import { Link } from "react-router-dom";
 import { Icon } from "@components/Icon";
 import Logo from "../Elements/Logo";
-import { useState } from "react";
+import { useContext } from "react";
+import ThemeContext from "../../context/themeContext";
 
 const Navbar = () => {
   const menus = [
@@ -57,10 +58,10 @@ const Navbar = () => {
     { name: "theme-brown", bgcolor: "bg-[#8B4513]", color: "#8B4513" },
   ];
   
-  const [theme, setTheme] = useState(themes[0]);
+  const { theme, setTheme } = useContext(ThemeContext);
 
   return (
-    <div className={`bg-defaultBlack ${theme.name}`}>
+    <div className="bg-defaultBlack">
       <nav className="sticky top-0 text-special-bg2 sm:w-72 w-28 min-h-screen px-7 py-12 flex flex-col justify-between">
         <div>
           <div className="flex justify-center mb-10">
