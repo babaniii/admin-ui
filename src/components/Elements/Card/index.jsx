@@ -1,5 +1,13 @@
+import { useContext, useEffect } from "react";
+import ThemeContext from "../../../context/themeContext";
+
 const Card = (props) => {
   const { title = false, desc, variant } = props;
+  const { theme } = useContext(ThemeContext);
+
+  useEffect(() => {
+      document.body.className = theme.mode === "light" ? "light-mode" : "dark-mode";
+    }, [theme.mode]);
 
   return (
     <div className={`flex flex-col flex-1 mb-6 ${variant}`}>
@@ -14,7 +22,7 @@ const Card = (props) => {
           )}
         </>
       )}
-      <div className="bg-white rounded-lg px-6 py-5 shadow-xl flex-1">
+      <div className={`rounded-lg px-6 py-5 shadow-xl flex-1 ${theme.mode === "light" ? "bg-special-mainBg" : "bg-dark-mode"}`}>
         {desc}
       </div>
     </div>

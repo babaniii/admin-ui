@@ -80,7 +80,7 @@ const Navbar = () => {
       });
 
       setOpen(true);
-      setMsg({severity: "succes", desc: "logout succes"});
+      setMsg({severity: "success", desc: "logout success"});
 
     } catch (error) {
       setIsLoading(false);
@@ -126,7 +126,7 @@ const Navbar = () => {
           ))}
         </div>
         <div className="mx-auto w-full">
-        <Link to="#" onClick={Logout}>
+        <Link to="/login" onClick={Logout} data-testid="logout-button">
           <div className="flex bg-special-bg3 px-4 py-3 rounded-md hover:text-white zoom-in">
             <div className="mx-auto sm:mx-0">
               <Icon.Logout />

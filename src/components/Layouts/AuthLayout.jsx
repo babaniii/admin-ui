@@ -1,19 +1,27 @@
 import Logo from "../Elements/Logo";
 import { Link } from "react-router-dom";
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import { NotifContext } from "../../context/notifContext";
 import SimpleBackdrop from "../Elements/Backdrop";
 import CustomizedSnackbars from "../Elements/Snackbar";
 import * as motion from "motion/react-client";
+import ThemeContext from "../../context/themeContext";
+import ModeContext from "../../context/modeContext";
 
 const AuthLayout = (props) => {
   const { children } = props;
   const { type } = props;
   const {showForgotPassword = true, showSignInWith = true, showSignInWithGoogle = true, showAccountLink = true } = props;
   const { msg, setMsg, open, setOpen, isLoading, setIsLoading } = useContext(NotifContext);
+  const { theme } = useContext(ThemeContext);
+  const { mode, toggleMode } = useContext(ModeContext);
+
+  useEffect(() => {
+    document.body.className = mode === "light" ? "light-mode" : "dark-mode";
+  }, [mode]);
 
   return (
-    <div className="flex justify-center min-h-screen items-center bg-special-mainBg">
+    <div className={`flex justify-center min-h-screen items-center ${mode === "light" ? "bg-special-mainBg" : "bg-dark-mode"}`}>    
       {/* container start */}
       {isLoading && (
           <SimpleBackdrop isLoading={isLoading} setIsLoading={setIsLoading} />
@@ -147,6 +155,11 @@ const AuthLayout = (props) => {
         </div>
         )}
         {/* forgot password end */}
+        <div style={{ marginTop: "20px", textAlign: "center" }}>
+          <button data-testid="dark-mode" onClick={toggleMode}>
+            {mode === "light" ? "Switch to Dark Mode" : "Switch to Light Mode"}
+          </button>
+        </div>
       </motion.div>
       {/* container end */}
     </div>

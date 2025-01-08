@@ -25,6 +25,7 @@ const FormSignIn = () => {
   });
 
   const onFormSubmit = async (data) => {
+    setIsLoading(true);
     try {
       const response = await axios.post(
         "https://jwt-auth-eight-neon.vercel.app/login",
@@ -40,7 +41,7 @@ const FormSignIn = () => {
   
       //console.log(response);
       setOpen(true);
-      setMsg({severity:"succes", desc:"Login Succes"});
+      setMsg({severity:"success", desc:"Login Success"});
 
       localStorage.setItem("refreshToken", response.data.refreshToken);
 
